@@ -10,14 +10,6 @@ namespace QuizTst.Core.Database
     {
         public IDbConnection SQLiteConnection { get; private set; }
 
-        public void ConnectToDatabase()
-        {
-            //using (IDbConnection con = new SQLiteConnection("Data Source=QuizDb.db"))
-            //{
-            //}
-            //SQLiteConnection = new SQLiteConnection(LoadConnectionString());
-            //SQLiteConnection.Open();
-        }
         public List<Question> GetAllQuestions(string questions)
         {
             using (SQLiteConnection = new SQLiteConnection("Data Source=./Database/QuizDB.db"))
@@ -30,11 +22,6 @@ namespace QuizTst.Core.Database
         {
             //not necessery
             //SQLiteConnection.Execute($"insert into {question.GetType().Name} () values ()", question);
-        }
-
-        private static string LoadConnectionString(string id = "Default")
-        {
-            return null;//ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
     }
 }

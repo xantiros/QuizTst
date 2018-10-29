@@ -14,8 +14,6 @@ namespace QuizTst
         {
             InitializeComponent();
 
-            db.ConnectToDatabase();
-
             questions = db.GetAllQuestions("Questions");
         }
     }
