@@ -16,5 +16,14 @@ namespace QuizTst
 
             questions = db.GetAllQuestions("Questions");
         }
+
+        private void button1_Click(object sender, System.EventArgs e)
+        {
+            Hide();
+            var game = new Game();
+            game.Closed += (s, args) => Show();             //game.Closed += (s, args) => Close();
+            game.Show();
+
+        }
     }
 }
