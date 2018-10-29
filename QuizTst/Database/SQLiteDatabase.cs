@@ -18,6 +18,14 @@ namespace QuizTst.Core.Database
                 return Quest.ToList();
             }
         }
+        public Question GetQuestion(string question, int id)
+        {
+            using (SQLiteConnection = new SQLiteConnection("Data Source=./Database/QuizDB.db"))
+            {
+                var Quest =  SQLiteConnection.QuerySingle<Question>($"select * from {question} where Id = {id}", new DynamicParameters());
+                return Quest;
+            }
+        }
         public void SaveToDatabase(Question question)
         {
             //not necessery
