@@ -3,7 +3,6 @@ using System.Collections.Generic;
 using System.Data;
 using System.Data.SQLite;
 using System.Linq;
-using System.Configuration;
 
 namespace QuizTst.Core.Database
 {
@@ -13,25 +12,29 @@ namespace QuizTst.Core.Database
 
         public void ConnectToDatabase()
         {
-            //using (IDbConnection con = new SQLiteConnection("Data Source=UtilitiesDB.db"))
+            //using (IDbConnection con = new SQLiteConnection("Data Source=QuizDb.db"))
             //{
             //}
-            SQLiteConnection = new SQLiteConnection(LoadConnectionString());
+            //SQLiteConnection = new SQLiteConnection(LoadConnectionString());
             //SQLiteConnection.Open();
         }
-        public List<Question> GetUtilities(string question)
+        public List<Question> GetAllQuestions(string questions)
         {
-            var Quest = SQLiteConnection.Query<Question>($"select * from {question}", new DynamicParameters());
-            return Quest.ToList();
+            using (SQLiteConnection = new SQLiteConnection("Data Source=./Database/QuizDB.db"))
+            {
+                var Quest = SQLiteConnection.Query<Question>($"select * from {questions}", new DynamicParameters());
+                return Quest.ToList();
+            }
         }
-        public void SaveToDatabase(Question utility)
+        public void SaveToDatabase(Question question)
         {
-            SQLiteConnection.Execute($"insert into {utility.GetType().Name} (date, value, amount, unitprice, totalprice) values (@date, @value, @amount, @unitprice, @totalprice)", utility);
+            //not necessery
+            //SQLiteConnection.Execute($"insert into {question.GetType().Name} () values ()", question);
         }
 
         private static string LoadConnectionString(string id = "Default")
         {
-            return ConfigurationManager.ConnectionStrings[id].ConnectionString;
+            return null;//ConfigurationManager.ConnectionStrings[id].ConnectionString;
         }
     }
 }
