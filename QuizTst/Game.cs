@@ -1,12 +1,6 @@
 ﻿using QuizTst.Core.Database;
+using QuizTst.Core.Models;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace QuizTst
@@ -17,35 +11,68 @@ namespace QuizTst
 
         //List<Question> questions = new List<Question>();
 
-        private bool button1WasClicked = false;
-
-        int idQuest = 1;
-
+        Player player = new Player(1, 0);
         Question que;
 
         public Game()
         {
             InitializeComponent();
 
-            ShowQuestion(idQuest);
+            ShowQuestion(player.QuestionId);
 
-            void ShowQuestion(int id)
-            {
-                que = db.GetQuestion("Questions", idQuest);
-                Content.Text = que.Content + " nr: " + idQuest;
-                rbAA.Text = que.A;
-                rbBB.Text = que.B;
-                rbCC.Text = que.C;
-                rbDD.Text = que.D;
-            }
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
-            var answer += rbAA.Checked;
-            if (rbAA.Checked == que.Correct)
+            if (rbAA.Checked == true && 1 == que.Correct)
+            {
+                player.AddPoint();
+                player.NextQuestionId();
+            }
+            else if (rbBB.Checked == true && 2 == que.Correct)
+            {
+                player.AddPoint();
+                player.NextQuestionId();
+            }
+            else if (rbCC.Checked == true && 3 == que.Correct)
+            {
+                player.AddPoint();
+                player.NextQuestionId();
+            }
+            else if (rbDD.Checked == true && 4 == que.Correct)
+            {
+                player.AddPoint();
+                player.NextQuestionId();
+            }
+            else if (rbAA.Checked == false && rbBB.Checked == false 
+                && rbCC.Checked == false && rbDD.Checked == false)
+            {
+                string message = "Mark the answere";
+                string caption = "Error";
+                MessageBoxButtons button = MessageBoxButtons.OK;
 
-            idQuest++;
+                DialogResult result = MessageBox.Show(message, caption);                 //result = MessageBox.Show(message, caption, button);
+            }
+            else
+            {
+                string message = "Wrong answeer. The correct answer was: " + que.Correct;
+                string caption = "Wrong answeer.";
+                MessageBoxButtons button = MessageBoxButtons.OK;
+
+                DialogResult result = MessageBox.Show(message, caption);
+                player.NextQuestionId();
+            }
+            ShowQuestion(player.QuestionId);
+        }
+
+        public void ShowQuestion(int id)
+        {
+            que = db.GetQuestion("Questions", id);
+            Content.Text = que.Content + " nr: " + id;
+            rbAA.Text = que.A;
+            rbBB.Text = que.B;
+            rbCC.Text = que.C;
+            rbDD.Text = que.D;
         }
     }
 }

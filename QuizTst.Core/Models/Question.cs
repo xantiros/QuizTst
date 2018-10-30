@@ -8,9 +8,9 @@
         public string B { get; private set; }
         public string C { get; private set; }
         public string D { get; private set; }
-        public string Correct { get; private set; }
+        public int Correct { get; private set; }
 
-        public Question(int id, string content, string a, string b, string c, string d, string correct)
+        public Question(int id, string content, string a, string b, string c, string d, int correct)
         {
             Id = id;
             Content = content;
