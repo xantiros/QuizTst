@@ -22,8 +22,7 @@ namespace QuizTst.Core.Database
         {
             using (SQLiteConnection = new SQLiteConnection("Data Source=./Database/QuizDB.db"))
             {
-                var Quest =  SQLiteConnection.QuerySingle<Question>($"select * from {question} where Id = {id}", new DynamicParameters());
-                return Quest;
+                return SQLiteConnection.QuerySingleOrDefault<Question>($"select * from {question} where Id = {id}", new DynamicParameters());
             }
         }
         public void SaveToDatabase(Question question)

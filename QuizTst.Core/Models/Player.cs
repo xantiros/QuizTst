@@ -18,6 +18,11 @@
         {
             QuestionId++;
         }
+        public void AddPointPlusNextQuestionId()
+        {
+            Points++;
+            QuestionId++;
+        }
 
         protected Player()
         {

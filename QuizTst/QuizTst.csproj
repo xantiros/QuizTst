@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAcces.cs" />
     <Compile Include="Database\SQLiteDatabase.cs" />
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>

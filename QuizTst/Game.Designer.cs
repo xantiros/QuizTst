@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Content = new System.Windows.Forms.Label();
+            this.content = new System.Windows.Forms.Label();
             this.btnCheck = new System.Windows.Forms.Button();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.rbAA = new System.Windows.Forms.RadioButton();
@@ -37,14 +37,14 @@
             this.rbDD = new System.Windows.Forms.RadioButton();
             this.SuspendLayout();
             // 
-            // Content
+            // content
             // 
-            this.Content.AutoSize = true;
-            this.Content.Location = new System.Drawing.Point(109, 38);
-            this.Content.Name = "Content";
-            this.Content.Size = new System.Drawing.Size(42, 13);
-            this.Content.TabIndex = 0;
-            this.Content.Text = "Pytanie";
+            this.content.AutoSize = true;
+            this.content.Location = new System.Drawing.Point(109, 38);
+            this.content.Name = "content";
+            this.content.Size = new System.Drawing.Size(42, 13);
+            this.content.TabIndex = 0;
+            this.content.Text = "Pytanie";
             // 
             // btnCheck
             // 
@@ -118,7 +118,7 @@
             this.Controls.Add(this.rbAA);
             this.Controls.Add(this.progressBar1);
             this.Controls.Add(this.btnCheck);
-            this.Controls.Add(this.Content);
+            this.Controls.Add(this.content);
             this.Name = "Game";
             this.Text = "Game";
             this.ResumeLayout(false);
@@ -128,7 +128,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label Content;
+        private System.Windows.Forms.Label content;
         private System.Windows.Forms.Button btnCheck;
         private System.Windows.Forms.ProgressBar progressBar1;
         private System.Windows.Forms.RadioButton rbAA;
