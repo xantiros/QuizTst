@@ -56,5 +56,19 @@ namespace QuizTst
                 player.NextQuestionId();
             }
         }
+        public static void EndQuiz(Player player)
+        {
+            string message = "Your points " + player.Points;
+            string caption = "End Quiz";
+            MessageBoxButtons button = MessageBoxButtons.OK;
+
+            //DialogResult result = MessageBox.Show(message, caption);
+
+            if (MessageBox.Show(message, caption, button) == DialogResult.OK)
+            {
+                Application.Restart();
+            }
+
+        }
     }
 }

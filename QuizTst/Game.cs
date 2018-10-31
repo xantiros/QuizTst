@@ -27,7 +27,10 @@ namespace QuizTst
             DataAcces.CheckAnswer(player, que, content, rbAA, rbBB, rbCC, rbDD);
             que = DataAcces.GetQuestion(db, player);
             if (que is null)
+            {
+                EndQuiz(player);
                 return;
+            }
             DataAcces.ShowQuestion(que, content, rbAA, rbBB, rbCC, rbDD);
         }
     }
