@@ -4,7 +4,7 @@ using System.Windows.Forms;
 
 namespace QuizTst
 {
-    public static class DataAcces
+    public static class Helper
     {
         public static void ShowQuestion(Question que, Label content, 
             RadioButton rbAA, RadioButton rbBB, RadioButton rbCC, RadioButton rbDD)

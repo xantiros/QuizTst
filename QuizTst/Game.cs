@@ -16,22 +16,22 @@ namespace QuizTst
         {
             InitializeComponent();
 
-            que = DataAcces.GetQuestion(db, player);
-            DataAcces.ShowQuestion(que, content, rbAA, rbBB, rbCC, rbDD);
+            que = Helper.GetQuestion(db, player);
+            Helper.ShowQuestion(que, content, rbAA, rbBB, rbCC, rbDD);
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
         {
             if (que is null)
                 return;
-            DataAcces.CheckAnswer(player, que, content, rbAA, rbBB, rbCC, rbDD);
-            que = DataAcces.GetQuestion(db, player);
+            Helper.CheckAnswer(player, que, content, rbAA, rbBB, rbCC, rbDD);
+            que = Helper.GetQuestion(db, player);
             if (que is null)
             {
-                DataAcces.EndQuiz(player);
+                Helper.EndQuiz(player);
                 return;
             }
-            DataAcces.ShowQuestion(que, content, rbAA, rbBB, rbCC, rbDD);
+            Helper.ShowQuestion(que, content, rbAA, rbBB, rbCC, rbDD);
         }
     }
 }
