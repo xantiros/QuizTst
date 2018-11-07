@@ -15,7 +15,7 @@ namespace QuizTst
         {
             Hide();
             var game = new Game();
-            game.Closed += (s, args) => Show();             //game.Closed += (s, args) => Close();
+            game.Closed += (s, args) => Show();           //game.Closed += (s, args) => Close();
             game.Show();
 
         }
