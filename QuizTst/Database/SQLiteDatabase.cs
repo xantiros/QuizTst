@@ -31,7 +31,7 @@ namespace QuizTst.Core.Database
                         wb.DownloadFile(DatabaseAdress, "QuizDB.db");
                     }
                 }
-                catch (WebException we)
+                catch (WebException)
                 {
                     return;
                 }    
