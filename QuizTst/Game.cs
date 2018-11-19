@@ -7,7 +7,7 @@ namespace QuizTst
 {
     public partial class Game : Form
     {
-        public SQLiteDatabase db = new SQLiteDatabase();
+        SQLiteDatabase db = new SQLiteDatabase();
 
         Player player = new Player(1, 0);
         Question que;

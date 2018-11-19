@@ -28,29 +28,41 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_Play = new System.Windows.Forms.Button();
+            this.btn_checkForUpdate = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // button1
+            // btn_Play
             // 
-            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.btn_Play.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.button1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button1.Location = new System.Drawing.Point(134, 120);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(130, 56);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Play";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.btn_Play.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btn_Play.Location = new System.Drawing.Point(135, 80);
+            this.btn_Play.Name = "btn_Play";
+            this.btn_Play.Size = new System.Drawing.Size(130, 56);
+            this.btn_Play.TabIndex = 0;
+            this.btn_Play.Text = "Play";
+            this.btn_Play.UseVisualStyleBackColor = true;
+            this.btn_Play.Click += new System.EventHandler(this.btn_Play_Click);
+            // 
+            // btn_checkForUpdate
+            // 
+            this.btn_checkForUpdate.Location = new System.Drawing.Point(135, 235);
+            this.btn_checkForUpdate.Name = "btn_checkForUpdate";
+            this.btn_checkForUpdate.Size = new System.Drawing.Size(130, 38);
+            this.btn_checkForUpdate.TabIndex = 1;
+            this.btn_checkForUpdate.Text = "Check for update questions";
+            this.btn_checkForUpdate.UseVisualStyleBackColor = true;
+            this.btn_checkForUpdate.Click += new System.EventHandler(this.btn_CheckForUpdates_Click);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(393, 309);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btn_checkForUpdate);
+            this.Controls.Add(this.btn_Play);
             this.Name = "Form1";
             this.Text = "Form1";
             this.ResumeLayout(false);
@@ -59,7 +71,8 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_Play;
+        private System.Windows.Forms.Button btn_checkForUpdate;
     }
 }
 
