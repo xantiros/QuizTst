@@ -52,6 +52,14 @@ namespace QuizTst.Core.Database
                 return SQLiteConnection.QuerySingleOrDefault<Question>($"select * from {question} where Id = {id}", new DynamicParameters());
             }
         }
+        public int CountQuestions(string question)
+        {
+            using (SQLiteConnection = new SQLiteConnection("Data Source=QuizDB.db"))
+            {
+                return SQLiteConnection.ExecuteScalar<int>($"select count(1) from {question}");
+                    //SQLiteConnection.QuerySingleOrDefault<Question>($"select count(1) from {question}", new DynamicParameters());
+            }
+        }
         public void SaveToDatabase(Question question)
         {
             //not necessery

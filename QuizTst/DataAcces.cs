@@ -14,6 +14,7 @@ namespace QuizTst
             rbBB.Text = que.B;
             rbCC.Text = que.C;
             rbDD.Text = que.D;
+
         }
         public static Question GetQuestion(SQLiteDatabase db, Player player)
         {

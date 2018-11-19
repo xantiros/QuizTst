@@ -18,6 +18,8 @@ namespace QuizTst
 
             que = Helper.GetQuestion(db, player);
             Helper.ShowQuestion(que, content, rbAA, rbBB, rbCC, rbDD);
+            progressBar1.Maximum = db.CountQuestions("Questions");
+            progressBar1.Step = 1;
         }
 
         private void btnCheck_Click(object sender, EventArgs e)
@@ -32,6 +34,7 @@ namespace QuizTst
                 return;
             }
             Helper.ShowQuestion(que, content, rbAA, rbBB, rbCC, rbDD);
+            progressBar1.PerformStep();
         }
     }
 }
