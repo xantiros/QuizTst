@@ -10,9 +10,6 @@ namespace QuizTst.Core.Database
     {
         public IDbConnection SQLiteConnection { get; private set; }
 
-        //https://drive.google.com/file/d/1ROXmQQ98IGlwmgnc4zsGgGKpJlKAeC5h/view?usp=sharing -my file
-        //https://drive.google.com/uc?export=download&id=ABCDEFG1234567 --przyklad
-        //https://drive.google.com/uc?export=download&id=1ROXmQQ98IGlwmgnc4zsGgGKpJlKAeC5h
         public List<Question> GetAllQuestions(string questions)
         {
             using (SQLiteConnection = new SQLiteConnection("Data Source=./Database/QuizDB.db"))
