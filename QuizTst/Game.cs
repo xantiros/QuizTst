@@ -10,14 +10,15 @@ namespace QuizTst
     {
         SQLiteDatabase db = new SQLiteDatabase();
 
-        Player player = new Player(1, 0);
+        Player player = new Player(0, 0, 0, 0);
+        int question_id = 1;
         Question que;
 
         public Game()
         {
             InitializeComponent();
 
-            que = Helper.GetQuestion(db, player);
+            que = Helper.GetQuestion(db, question_id);
             Helper.ShowQuestion(que, content, rbAA, rbBB, rbCC, rbDD);
             progressBar1.Maximum = db.CountQuestions("Questions");
             progressBar1.Step = 1;
@@ -28,12 +29,13 @@ namespace QuizTst
             if (que is null)
                 return;
             Helper.CheckAnswer(player, que, content, rbAA, rbBB, rbCC, rbDD);
-            que = Helper.GetQuestion(db, player);
+            que = Helper.GetQuestion(db, question_id);
             if (que is null)
             {
                 Helper.EndQuiz(player);
                 return;
             }
+            question_id++;
             Helper.ShowQuestion(que, content, rbAA, rbBB, rbCC, rbDD);
             progressBar1.PerformStep();
         }

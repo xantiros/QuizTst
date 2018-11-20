@@ -16,27 +16,27 @@ namespace QuizTst
             rbDD.Text = que.D;
 
         }
-        public static Question GetQuestion(SQLiteDatabase db, Player player)
+        public static Question GetQuestion(SQLiteDatabase db, int questionId)
         {
-            return db.GetQuestion("Questions", player.QuestionId);
+            return db.GetQuestion("Questions", questionId);
         }
         public static void CheckAnswer(Player player, Question que, Label content, RadioButton rbAA, RadioButton rbBB, RadioButton rbCC, RadioButton rbDD)
         {
             if (rbAA.Checked == true && 1 == que.Correct)
             {
-                player.AddPointPlusNextQuestionId();
+                player.AddTotalPoints();
             }
             else if (rbBB.Checked == true && 2 == que.Correct)
             {
-                player.AddPointPlusNextQuestionId();
+                player.AddTotalPoints();
             }
             else if (rbCC.Checked == true && 3 == que.Correct)
             {
-                player.AddPointPlusNextQuestionId();
+                player.AddTotalPoints();
             }
             else if (rbDD.Checked == true && 4 == que.Correct)
             {
-                player.AddPointPlusNextQuestionId();
+                player.AddTotalPoints();
             }
             else if (rbAA.Checked == false && rbBB.Checked == false
                 && rbCC.Checked == false && rbDD.Checked == false)
@@ -54,12 +54,12 @@ namespace QuizTst
                 //MessageBoxButtons button = MessageBoxButtons.OK;
 
                 DialogResult result = MessageBox.Show(message, caption);
-                player.NextQuestionId();
+                //player.NextQuestionId();
             }
         }
         public static void EndQuiz(Player player)
         {
-            string message = "Your points " + player.Points;
+            string message = "Your points " + player.Total_Points;
             string caption = "End Quiz";
             MessageBoxButtons button = MessageBoxButtons.OK;
 

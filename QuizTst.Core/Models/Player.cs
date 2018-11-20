@@ -1,29 +1,37 @@
-﻿namespace QuizTst.Core.Models
+﻿using System.Collections.Generic;
+
+namespace QuizTst.Core.Models
 {
     public class Player
     {
-        public int QuestionId { get; private set; }
-        public int Points { get; private set; }
+        public int Total_Points { get; private set; }
+        public int Level1_Points { get; private set; }
+        public int Level2_Points { get; private set; }
+        public int Level3_Points { get; private set; }
 
-        public Player(int questionId, int points)
+        public Player(int total_points, int level1_points, int level2_points, int level3_points)
         {
-            QuestionId = questionId;
-            Points = points;
+            Total_Points = total_points;
+            Level1_Points = level1_points;
+            Level2_Points = level2_points;
+            Level3_Points = level3_points;
         }
-        public void AddPoint()
+        public void AddTotalPoints()
         {
-            Points++;
+            Total_Points++;
         }
-        public void NextQuestionId()
+        public void AddLevel1Points()
         {
-            QuestionId++;
+            Level1_Points++;
         }
-        public void AddPointPlusNextQuestionId()
+        public void AddLevel2Points()
         {
-            Points++;
-            QuestionId++;
+            Level2_Points++;
         }
-
+        public void AddLevel3Points()
+        {
+            Level3_Points++;
+        }
         protected Player()
         {
         }
