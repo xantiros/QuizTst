@@ -1,6 +1,7 @@
 ﻿using QuizTst.Core.Database;
 using QuizTst.Core.Models;
 using System;
+using System.ComponentModel;
 using System.Windows.Forms;
 
 namespace QuizTst
@@ -20,9 +21,10 @@ namespace QuizTst
             Helper.ShowQuestion(que, content, rbAA, rbBB, rbCC, rbDD);
             progressBar1.Maximum = db.CountQuestions("Questions");
             progressBar1.Step = 1;
+
         }
 
-        private void btnCheck_Click(object sender, EventArgs e)
+        private void BtnCheck_Click(object sender, EventArgs e)
         {
             if (que is null)
                 return;
@@ -35,6 +37,12 @@ namespace QuizTst
             }
             Helper.ShowQuestion(que, content, rbAA, rbBB, rbCC, rbDD);
             progressBar1.PerformStep();
+        }
+
+        private void Btn_1_Click(object sender, EventArgs e)
+        {
+            panel_Levels.Visible = false;
+            panel_Game.Visible = true;
         }
     }
 }

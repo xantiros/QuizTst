@@ -31,6 +31,8 @@ namespace QuizTst
             var game = new Game();
             game.Closed += (s, args) => Show();           //game.Closed += (s, args) => Close();
             game.Show();
+            panel_Levels.Visible = false;
+            panel_StarWindow.Visible = true;
         }
     }
 }
