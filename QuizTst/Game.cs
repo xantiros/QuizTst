@@ -34,6 +34,7 @@ namespace QuizTst
             que = Helper.GetQuestion(db, question_id);
             if (que is null)
             {
+                db.UpdatePlayer(player);
                 Helper.EndQuiz(player);
                 return;
             }

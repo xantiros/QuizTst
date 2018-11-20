@@ -59,7 +59,7 @@ namespace QuizTst
         }
         public static void EndQuiz(Player player)
         {
-            string message = "Your points " + player.Total_Points;
+            string message = "Your points " + player.TotalPoints;
             string caption = "End Quiz";
             MessageBoxButtons button = MessageBoxButtons.OK;
 

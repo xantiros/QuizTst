@@ -1,4 +1,5 @@
 ﻿using Dapper;
+using QuizTst.Core.Models;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -60,8 +61,13 @@ namespace QuizTst.Core.Database
                     //SQLiteConnection.QuerySingleOrDefault<Question>($"select count(1) from {question}", new DynamicParameters());
             }
         }
-        public void SaveToDatabase(Question question)
+        public void UpdatePlayer(Player player)
         {
+            using (SQLiteConnection = new SQLiteConnection("Data Source=QuizDB.db"))
+            {
+                SQLiteConnection.Execute("update player set TotalPoints = @TotalPoints, Level1Points = @Level1Points, Level2Points = @Level2Points, Level3Points = @Level3Points", player);
+            }
+            //SQLiteConnection.Execute($"insert into {player} ({player.Total_Points, player.to})values ");
             //not necessery
             //SQLiteConnection.Execute($"insert into {question.GetType().Name} () values ()", question);
         }
