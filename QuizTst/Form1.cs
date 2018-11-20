@@ -12,6 +12,7 @@ namespace QuizTst
         {
             InitializeComponent();
             panel_Levels.Visible = false;
+            //panel1 = false;
         }
 
         private void btn_Play_Click(object sender, System.EventArgs e)

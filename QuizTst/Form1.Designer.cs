@@ -129,11 +129,11 @@
 
         private System.Windows.Forms.Button btn_Play;
         private System.Windows.Forms.Button btn_checkForUpdate;
-        private System.Windows.Forms.Panel panel_StarWindow;
-        private System.Windows.Forms.Panel panel_Levels;
         private System.Windows.Forms.Button btn_Level3;
         private System.Windows.Forms.Button btn_Level2;
         private System.Windows.Forms.Button btn_Level1;
+        public System.Windows.Forms.Panel panel_StarWindow;
+        public System.Windows.Forms.Panel panel_Levels;
     }
 }
 
