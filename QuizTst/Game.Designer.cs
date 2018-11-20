@@ -36,11 +36,7 @@
             this.rbCC = new System.Windows.Forms.RadioButton();
             this.rbDD = new System.Windows.Forms.RadioButton();
             this.panel_Game = new System.Windows.Forms.Panel();
-            this.panel_1_100 = new System.Windows.Forms.Panel();
-            this.btn_2 = new System.Windows.Forms.Button();
-            this.btn_1 = new System.Windows.Forms.Button();
             this.panel_Game.SuspendLayout();
-            this.panel_1_100.SuspendLayout();
             this.SuspendLayout();
             // 
             // content
@@ -127,46 +123,16 @@
             this.panel_Game.Size = new System.Drawing.Size(294, 318);
             this.panel_Game.TabIndex = 8;
             // 
-            // panel_1_100
-            // 
-            this.panel_1_100.Controls.Add(this.btn_2);
-            this.panel_1_100.Controls.Add(this.btn_1);
-            this.panel_1_100.Location = new System.Drawing.Point(12, 12);
-            this.panel_1_100.Name = "panel_1_100";
-            this.panel_1_100.Size = new System.Drawing.Size(294, 318);
-            this.panel_1_100.TabIndex = 9;
-            // 
-            // btn_2
-            // 
-            this.btn_2.Location = new System.Drawing.Point(42, 76);
-            this.btn_2.Name = "btn_2";
-            this.btn_2.Size = new System.Drawing.Size(75, 23);
-            this.btn_2.TabIndex = 1;
-            this.btn_2.Text = "2";
-            this.btn_2.UseVisualStyleBackColor = true;
-            // 
-            // btn_1
-            // 
-            this.btn_1.Location = new System.Drawing.Point(42, 25);
-            this.btn_1.Name = "btn_1";
-            this.btn_1.Size = new System.Drawing.Size(75, 25);
-            this.btn_1.TabIndex = 0;
-            this.btn_1.Text = "1";
-            this.btn_1.UseVisualStyleBackColor = true;
-            this.btn_1.Click += new System.EventHandler(this.Btn_1_Click);
-            // 
             // Game
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(342, 362);
-            this.Controls.Add(this.panel_1_100);
             this.Controls.Add(this.panel_Game);
             this.Name = "Game";
             this.Text = "Game";
             this.panel_Game.ResumeLayout(false);
             this.panel_Game.PerformLayout();
-            this.panel_1_100.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -181,8 +147,5 @@
         private System.Windows.Forms.RadioButton rbCC;
         private System.Windows.Forms.RadioButton rbDD;
         private System.Windows.Forms.Panel panel_Game;
-        private System.Windows.Forms.Panel panel_1_100;
-        private System.Windows.Forms.Button btn_2;
-        private System.Windows.Forms.Button btn_1;
     }
 }

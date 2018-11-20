@@ -20,8 +20,10 @@ namespace QuizTst
 
             que = Helper.GetQuestion(db, question_id);
             Helper.ShowQuestion(que, content, rbAA, rbBB, rbCC, rbDD);
+            question_id++;
             progressBar1.Maximum = db.CountQuestions("Questions");
             progressBar1.Step = 1;
+            progressBar1.PerformStep();
         }
 
         private void BtnCheck_Click(object sender, EventArgs e)
@@ -38,12 +40,6 @@ namespace QuizTst
             question_id++;
             Helper.ShowQuestion(que, content, rbAA, rbBB, rbCC, rbDD);
             progressBar1.PerformStep();
-        }
-
-        private void Btn_1_Click(object sender, EventArgs e)
-        {
-            panel_1_100.Visible = false;
-            panel_Game.Visible = true;
         }
     }
 }
