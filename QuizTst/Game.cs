@@ -10,7 +10,8 @@ namespace QuizTst
     {
         SQLiteDatabase db = new SQLiteDatabase();
 
-        Player player = new Player(0, 0, 0, 0);
+        public Form1 form1;
+        //Player player = new Player(0, 0, 0, 0);
         int question_id = 1;
         Question que;
 
@@ -30,12 +31,12 @@ namespace QuizTst
         {
             if (que is null)
                 return;
-            Helper.CheckAnswer(player, que, content, rbAA, rbBB, rbCC, rbDD);
+            Helper.CheckAnswer(Playeer.player, que, content, rbAA, rbBB, rbCC, rbDD);
             que = Helper.GetQuestion(db, question_id);
             if (que is null)
             {
-                db.UpdatePlayer(player);
-                Helper.EndQuiz(player);
+                db.UpdatePlayer(Playeer.player);
+                Helper.EndQuiz(Playeer.player);
                 return;
             }
             question_id++;

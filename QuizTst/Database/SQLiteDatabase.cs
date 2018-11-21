@@ -71,5 +71,12 @@ namespace QuizTst.Core.Database
             //not necessery
             //SQLiteConnection.Execute($"insert into {question.GetType().Name} () values ()", question);
         }
+        public Player GetPlayer()
+        {
+            using (SQLiteConnection = new SQLiteConnection("Data Source=QuizDB.db"))
+            {
+                return SQLiteConnection.QuerySingleOrDefault<Player>("select * from player", new DynamicParameters());
+            }
+        }
     }
 }

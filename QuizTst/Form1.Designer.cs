@@ -32,9 +32,10 @@
             this.btn_checkForUpdate = new System.Windows.Forms.Button();
             this.panel_StarWindow = new System.Windows.Forms.Panel();
             this.panel_Levels = new System.Windows.Forms.Panel();
-            this.btn_Level1 = new System.Windows.Forms.Button();
-            this.btn_Level2 = new System.Windows.Forms.Button();
             this.btn_Level3 = new System.Windows.Forms.Button();
+            this.btn_Level2 = new System.Windows.Forms.Button();
+            this.btn_Level1 = new System.Windows.Forms.Button();
+            this.lb_Player = new System.Windows.Forms.Label();
             this.panel_StarWindow.SuspendLayout();
             this.panel_Levels.SuspendLayout();
             this.SuspendLayout();
@@ -65,6 +66,7 @@
             // 
             // panel_StarWindow
             // 
+            this.panel_StarWindow.Controls.Add(this.lb_Player);
             this.panel_StarWindow.Controls.Add(this.btn_Play);
             this.panel_StarWindow.Controls.Add(this.btn_checkForUpdate);
             this.panel_StarWindow.Location = new System.Drawing.Point(12, 12);
@@ -82,15 +84,14 @@
             this.panel_Levels.Size = new System.Drawing.Size(190, 270);
             this.panel_Levels.TabIndex = 3;
             // 
-            // btn_Level1
+            // btn_Level3
             // 
-            this.btn_Level1.Location = new System.Drawing.Point(27, 14);
-            this.btn_Level1.Name = "btn_Level1";
-            this.btn_Level1.Size = new System.Drawing.Size(130, 56);
-            this.btn_Level1.TabIndex = 0;
-            this.btn_Level1.Text = "Poziom 1";
-            this.btn_Level1.UseVisualStyleBackColor = true;
-            this.btn_Level1.Click += new System.EventHandler(this.btn_Level1_Click);
+            this.btn_Level3.Location = new System.Drawing.Point(27, 191);
+            this.btn_Level3.Name = "btn_Level3";
+            this.btn_Level3.Size = new System.Drawing.Size(130, 56);
+            this.btn_Level3.TabIndex = 2;
+            this.btn_Level3.Text = "Poziom 3";
+            this.btn_Level3.UseVisualStyleBackColor = true;
             // 
             // btn_Level2
             // 
@@ -101,14 +102,23 @@
             this.btn_Level2.Text = "Poziom 2";
             this.btn_Level2.UseVisualStyleBackColor = true;
             // 
-            // btn_Level3
+            // btn_Level1
             // 
-            this.btn_Level3.Location = new System.Drawing.Point(27, 191);
-            this.btn_Level3.Name = "btn_Level3";
-            this.btn_Level3.Size = new System.Drawing.Size(130, 56);
-            this.btn_Level3.TabIndex = 2;
-            this.btn_Level3.Text = "Poziom 3";
-            this.btn_Level3.UseVisualStyleBackColor = true;
+            this.btn_Level1.Location = new System.Drawing.Point(27, 14);
+            this.btn_Level1.Name = "btn_Level1";
+            this.btn_Level1.Size = new System.Drawing.Size(130, 56);
+            this.btn_Level1.TabIndex = 0;
+            this.btn_Level1.Text = "Poziom 1";
+            this.btn_Level1.UseVisualStyleBackColor = true;
+            this.btn_Level1.Click += new System.EventHandler(this.btn_Level1_Click);
+            // 
+            // lb_Player
+            // 
+            this.lb_Player.AutoSize = true;
+            this.lb_Player.Location = new System.Drawing.Point(28, 101);
+            this.lb_Player.Name = "lb_Player";
+            this.lb_Player.Size = new System.Drawing.Size(0, 13);
+            this.lb_Player.TabIndex = 2;
             // 
             // Form1
             // 
@@ -120,6 +130,7 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel_StarWindow.ResumeLayout(false);
+            this.panel_StarWindow.PerformLayout();
             this.panel_Levels.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -134,6 +145,7 @@
         private System.Windows.Forms.Button btn_Level1;
         public System.Windows.Forms.Panel panel_StarWindow;
         public System.Windows.Forms.Panel panel_Levels;
+        private System.Windows.Forms.Label lb_Player;
     }
 }
 
